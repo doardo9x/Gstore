@@ -18,3 +18,10 @@ dotnet add package Microsoft.EntityFrameworkCore.Tools --version 9.0.1
 dotnet add package Microsoft.AspNetCore.Identity.EntityFrameworkCore --version 9.0.1
 
 dotnet add package MySql.EntityFrameworkCore --version 9.0.0
+
+
+Criar a camada de dados (models)
+
+Criar classe de contexto (/data)
+
+Adicionar os serviços de Contexto e Identity no Program.cs
