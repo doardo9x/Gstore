@@ -36,4 +36,9 @@ public class Produto
     [Range(0, double.MaxValue)]
     [Column(TypeName = "numeric(10,2)")]
     public decimal ValorVenda { get; set; }
+
+    public bool Destaque { get; set; }
+
+    public List<ProdutoFoto> Fotos { get; set; }
+
 }
