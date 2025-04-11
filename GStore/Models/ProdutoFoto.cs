@@ -12,15 +12,13 @@ public class ProdutoFoto
     [Display(Name = "Produto")]
     [Required(ErrorMessage = "Por favor, informe o Produto")]
     public int ProdutoId { get; set; }
-    
     [ForeignKey("ProdutoId")]
     public Produto Produto { get; set; }
-
 
     [StringLength(200)]
     [Display(Name = "Foto")]
     [Required(ErrorMessage = "Por favor, selecione a Foto")]
-    public string ArquivoFoto { get; set; } 
+    public string ArquivoFoto { get; set; }
 
     [Display(Name = "Descrição")]
     public string Descricao { get; set; }

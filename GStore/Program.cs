@@ -8,15 +8,15 @@ var builder = WebApplication.CreateBuilder(args);
 // Add services to the container.
 builder.Services.AddControllersWithViews();
 
-//Configuração do Serviço de conexão com o banco de dados
+// Configuração do Serviço de Conexão com o banco de dados
 string conexao = builder.Configuration.GetConnectionString("GStoreConn");
 builder.Services.AddDbContext<AppDbContext>(
     opt => opt.UseMySQL(conexao)
 );
 
-//Configuração do Serviço de Identidade de Usuários
+// Configuração do Serviço de Identidade de Usuários
 builder.Services.AddIdentity<Usuario, IdentityRole>(
-    opt => opt.SignIn.RequireConfirmedEmail = false
+    options => options.SignIn.RequireConfirmedEmail = false
 ).AddEntityFrameworkStores<AppDbContext>()
 .AddDefaultTokenProviders();
 
