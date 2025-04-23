@@ -1,6 +1,7 @@
 using GStore.Models;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
+using GStore.ViewModels;
 
 namespace GStore.Controllers;
 public class AccountController : Controller
@@ -21,5 +22,15 @@ public class AccountController : Controller
         _signInManager = signInManager;
         _userManager = userManager;
         _host = host;
+    }
+
+    [HttpGet]
+    public IActionResult Login(string returnUrl)
+    {
+        LoginVM login = new()
+        {
+            UrlRetorno = returnUrl ?? Url.Content("~/")
+        };
+        return View(login);
     }
 }
