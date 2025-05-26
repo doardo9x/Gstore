@@ -25,3 +25,10 @@ Criar a camada de dados (models)
 Criar classe de contexto (/data)
 
 Adicionar os serviços de Contexto e Identity no Program.cs
+
+dotnet codegenerator
+dotnet tool install -g dotnet-aspnet-codegenerator
+
+dotnet add package Microsoft.VisualStudio.Web.CodeGeneration.Design --version 9.0.0
+dotnet add package Microsoft.EntityFrameworkCore.SqlServer --version 9.0.1
+dotnet aspnet-codegenerator controller -name CategoriasController --model Categoria --dataContext AppDbContext --layout "~/Views/Shared/_LayoutAdmin.cshtml" -outDir Controllers
